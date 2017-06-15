@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+        }
+        h1 {
+            font-size: 5vw;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Make Something Happen</h1>
+    <script>
+        document.querySelector('h1').onclick = makeRequest;
+
+        function makeRequest() {
+           var xhr = new XMLHttpRequest()
+           xhr.open('GET', '/foo', true)
+
+           xhr.onreadystatechange = function() {
+               if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                   var b = document.querySelector('body')
+                   var newHeadingOne = document.createElement('h1');
+                   var newHeadingOneText = document.createTextNode(xhr.responseText);
+                   newHeadingOne.appendChild(newHeadingOneText);
+                   b.appendChild(newHeadingOne)
+               }
+           }
+
+           xhr.send();
+        }
+    </script>
+</body>
+</html>
