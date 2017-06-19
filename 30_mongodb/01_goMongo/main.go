@@ -4,7 +4,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/LizzieM2003/golang-web-programming/29_postgres/08_codeOrganisation/controllers"
+	"github.com/LizzieM2003/golang-web-programming/30_mongodb/01_goMongo/controllers"
 )
 
 func main() {

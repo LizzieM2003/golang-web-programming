@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html, body {
+            padding: 0;
+            border: 0;
+            margin: 0;
+            font-family: sans-serif;
+            box-sizing: border-box;
+        }
+
+        body, form {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+        }
+        input {
+            width: 60vw;
+            font-size: 5rem;
+            color: blue;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Update Book</h1>
+    <form method="post" action="/books/update/process">
+        <input type="text" name="isbn" placeholder="isbn" value="{{.Isbn}}">
+        <input type="text" name="title" placeholder="title" value="{{.Title}}">
+        <input type="text" name="author" placeholder="author" value="{{.Author}}">
+        <input type="text" name="price" placeholder="price" value="{{.Price}}">
+        <input type="submit" value="Update Book">
+    </form>
+</body>
+</html>

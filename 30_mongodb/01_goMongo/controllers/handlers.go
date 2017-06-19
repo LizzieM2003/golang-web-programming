@@ -6,8 +6,8 @@ import (
 	"html/template"
 	"net/http"
 
-	"github.com/LizzieM2003/golang-web-programming/29_postgres/08_codeOrganisation/config"
-	"github.com/LizzieM2003/golang-web-programming/29_postgres/08_codeOrganisation/models"
+	"github.com/LizzieM2003/golang-web-programming/30_mongodb/01_goMongo/config"
+	"github.com/LizzieM2003/golang-web-programming/30_mongodb/01_goMongo/models"
 )
 
 func Index(w http.ResponseWriter, r *http.Request) {

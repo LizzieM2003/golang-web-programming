@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html {
+            padding: 0;
+            border: 0;
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .link {
+            font-size: 1rem;
+        }
+
+        body > h2, body > p {
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>{{.Isbn}} - {{.Title}} - {{.Author}} - {{.Price}}</h2>
+    <p class="link"><a href="/books/update?isbn={{.Isbn}}">Update book</a></p>
+    <p class="link"><a href="/books/delete?isbn={{.Isbn}}">Delete book</a></p>
+</body>
+</html>
